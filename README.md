@@ -99,22 +99,25 @@ will serve as a helpful study guide for the exam.
     1. stage and commit as you test that feature; then 
     1. once confident, checkout `main` and merge your branch commits into `main`. This way,
        your `main` branch is always in a good state. 
- 
-1. `LambdaFun.java` contains method signatures and documentation for three generic methods. We will implement
-    and test these methods in the order that they appear in the Java program, starting with `printlnMatches`. 
-    The exact signature for this method is:
+
+1. Confirm that you are on the desired branch using `git status` and/or `git branch`. You should 
+   be able to tell by the output that you are currently on the `method1` branch. How can you tell this
+   is the case?
+   
+1. You will start by implementing the `printlnMatches` method in `LambdaFun.java`. The exact signature for 
+   this method is:
     
-    ```java
-    private static <T> void printlnMatches(T[] t, Predicate<T> p)
-    ```
+   ```java
+   private static <T> void printlnMatches(T[] t, Predicate<T> p)
+   ```
     
-    Answer the following questions about this method in your notes:
-    1. What is the generic type parameter?
-    1. Specifically, what reference types can replace `T`?
-    1. In order to call this method, we need a reference to an object of a class that implements 
-       [`Predicate<T>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html). 
-       `Predicate<T>` is a functional interface. **Write the full method signature of the single, abstract method
-       of this class in your notes.** Pay careful attention to the return type and the type of the formal parameter.
+   Answer the following questions about this method in your notes:
+   1. What is the generic type parameter?
+   1. Specifically, what reference types can replace `T`?
+   1. In order to call this method, we need a reference to an object of a class that implements 
+      [`Predicate<T>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html). 
+      `Predicate<T>` is a functional interface. **Write the full method signature of the single, abstract method
+      of this class in your notes.** Pay careful attention to the return type and the type of the formal parameter.
       
 1. Implement the `printlnMatches` method in `LambdaFun.java`. **You do not need to use a lambda for this step.**
    You will only need to use the object of type `Predicate<T>` referred to by `p` to call the appropriate method.
@@ -122,11 +125,11 @@ will serve as a helpful study guide for the exam.
    method using some code that, uses `p`.
    
 1. At the end of the `main` method of `LambdaFun` class:
-   1. Declare a variable of type `Predicate<String>`.
+   1. Declare a variable of type `Predicate<String>` named `p`.
    1. Initialize the variable using a lambda expression which provides an implementation for the single, abstract
       method of the `Predicate<String>` interface. See the 
       [Oracle tutorial](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax)
-      if you're still unsure about the syntax. Use your answer for **1.iii.** to help you write this lambda.
+      if you're still unsure about the syntax. Use your answer for **3.iii.** to help you write this lambda.
    1. This lambda should return `true` if the string argument contains the letter `"a"` (case sensitive).
       You may wish to refer to the documentation for `java.lang.String`, provided
       [here](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html).
@@ -144,11 +147,69 @@ will serve as a helpful study guide for the exam.
 1. Stage and commit all changes.
    
 1. Create three additional `Predicate<String>` objects to further test your `printlnMatches` method on the same
-   array. **Try to make them interesting!** Make sure to provide sufficient output so that it will be easy to 
-   convince your TA or instructor that everything is working properly.
+   array. **Try to make them interesting!** Make sure to provide sufficient output so that it will be easy for the
+   instructor/TA to know everything is working properly.
    
-1. Make sure your code passes `checkstyle` then stage and commit all changes.
+   An example of acceptable output:
+   ```
+   Test 1: outputs all strings that contain two or more a's
+   Lambda
+   
+   Test 2: outputs all strings that contain the letter b
+   Lambda
+   but
+   
+   Test 3: ...
+   ...
+   
+   ```
+   
+1. Make sure your code passes the `check1302` style audit.
 
+1. Now that everything on this branch compiles, ensure that all changes 
+   in the current branch have been staged and committed. 
+   **Do not execute the next command without making sure all changes are staged and committed**
+   After that, checkout the `main` branch using the following command:
+   
+   ```
+   $ git checkout main
+   ```
+
+1. Take a look at `Driver.java`. Notice that you have reverted back to the
+   original code (before you made any changes!). The new, updated, code is 
+   on the other branch. To incorporate the changes (merge the changes) from the 
+   `method1` branch into the current (`main`) branch, use the following command:
+   
+   ```
+   $ git merge method1
+   ```
+
+   Did the merge work? How do you know?
+
+1. In a previous exercise, you combined the `--all`, `--decorate`,
+   `--oneline`, and `--graph` options with `git log` to produce
+   a condensed, graphical version of the Git log. Generally, it is tiresome to
+   write them out each time. Instead, create a `git adog` command
+   by setting up a Git alias:
+
+   ```
+   $ git config --global alias.adog "log --all --decorate --oneline --graph"
+   ```
+   
+   **Note:** The previous command only needs to be done once on Odin.
+   
+1. View the condensed, graphical version of your Git log using `git adog`.
+   You should see that the current (`HEAD`) branch is `main` and that `main`
+   and `method1` are in the same place! You've now merged the changes into
+   the `main` branch. Now, we don't need the `method1` branch anymore. You can safely
+   delete it with:
+   
+   ```
+   git branch -d method1
+   ```
+   
+   Check the output of `git adog` to see that it is removed.
+   
 <hr/>
 
 ![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-1-success?style=for-the-badge)
@@ -157,11 +218,16 @@ will serve as a helpful study guide for the exam.
 
 ### Checkpoint 2 Steps
 
+1. For the next method, create and checkout a branch called `method2` using the same steps given in the 
+   previous checkpoint.
+
 1. Take a close look at the `printlnMappedMatches` method and its associated Javadoc in `LambdaFun.java`. 
    The exact signature for this method is:
+
    ```java
    private static <T> void printlnMappedMatches(T[] t, Predicate<T> p, Function<T, String> f)
    ```
+
    Answer the following questions about this method in your notes:
    * What is the generic type parameter?
    * Specifically, what reference types can replace `T`?
@@ -187,8 +253,9 @@ will serve as a helpful study guide for the exam.
      for the associated interface when trying to determine the layout of your lambda.
    
 1. Call the `printlnMappedMatches` using your newly created variables to filter out emails in the array referred
-   to by `inbox` from our rival school. Make sure to provide sufficient output so that it will be easy to 
-   convince your TA or instructor that everything is working properly.
+   to by `inbox` from our rival school. Make sure to provide sufficient output so that an instructor/TA will be
+   able to easily tell that everything is working properly. See the previous checkpoint for an example
+   of appropriate output.
    
 1. Stage and commit all changes.
    
@@ -197,7 +264,10 @@ will serve as a helpful study guide for the exam.
    Make sure to provide sufficient output so that it will be easy to convince your TA or instructor that 
    everything is working properly.
    
-1. Make sure your code passes `checkstyle` then stage and commit all changes.
+1. Make sure your code passes the `check1302` style audit then stage and commit all changes.
+
+1. When you are convinced that everything is working properly, merge your `method2` branch into `main` as you did
+   in the previous checkpoint. You can also delete `method2` if you wish.
 
 <hr/>
 
