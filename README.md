@@ -78,6 +78,29 @@ will serve as a helpful study guide for the exam.
 ### Checkpoint 1 Steps
 
 1. `LambdaFun.java` contains method signatures and documentation for three generic methods. We will implement
+    and test these methods in the order that they appear in the Java program. Before getting to work on method
+    implementation, create and checkout a branch called `method1` to perform the work related to this 
+    checkpoint. You can do this using the following command:
+   
+    ```
+    $ git checkout -b method1
+    ```
+   
+    **EXPLANATION:** When you create a branch, it is as if Git makes a copy of the current
+    branch without the `cp` command! If you checkout the branch (like we just did), then stage
+    and commit changes, then those commits do not affect the `main` branch. In this way, 
+    you can work on adding new features or fixing bugs until you are confident that they work. 
+    Towards the end of this checkpoint, you will checkout the `main` branch, and it will appear 
+    as it did when you started the homework assignment. Then, you will merge changes from the
+    `method1` branch into the currently checked out branch. You can do the same kind of thing 
+    in your projects: 
+
+       i) branch to work on a new feature;
+       ii) stage and commit as you test that feature; then 
+       iii) once confident, checkout `main` and merge your branch commits into `main`. This way,
+       your `main` branch is always in a good state. 
+ 
+1. `LambdaFun.java` contains method signatures and documentation for three generic methods. We will implement
     and test these methods in the order that they appear in the Java program, starting with `printlnMatches`. 
     The exact signature for this method is:
     
