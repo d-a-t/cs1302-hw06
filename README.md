@@ -1,7 +1,7 @@
 
-# cs1302-ce17 Generic Method Implementation
+# cs1302-hw06 Generic Method Implementation
 
-![Approved for: Fall 2020](https://img.shields.io/badge/Approved%20for-Fall%202020-blueviolet)
+![Approved for: Spring 2021](https://img.shields.io/badge/Approved%20for-Spring%202021-success)
 
 > ```java
 > String notSecret = "VUdBIGlzIGJldHRlciB0aGFuIEdBIFRlY2g=";
@@ -10,7 +10,7 @@
 > ```
 > **-- Proven Fact**
 
-This class exercise explores functional interfaces and lambda expressions in
+This homework assignment explores functional interfaces and lambda expressions in
 conjunction with generic methods and interfaces. In this exercise, only the generic
 method signatures will be provided. Implementation details are left to the student.
 
@@ -33,27 +33,31 @@ method signatures will be provided. Implementation details are left to the stude
 In your notes, clearly answer the following questions. These instructions assume that you are 
 logged into the Odin server. 
 
-**NOTE:** If a step requires you to enter in a command, please provide in your notes the full 
-command that you typed to make the related action happen. If context is necessary (e.g., the 
-command depends on your present working directory), then please note that context as well.
+**NOTE:** For each step, please provide in your notes the full command that you typed to make the related 
+action happen along with an explanation of why that command worked. Some commands require multiple options. 
+It is important to not only recall what you typed but also why you typed each of them. If context is necessary 
+(e.g., the command depends on your present working directory), then please note that context as well.
+You won't need to submit your notes in your final submission. However, if done properly, your exercise notes 
+will serve as a helpful study guide for the exam.
 
 ### Getting Started
 
-1. Use Git to clone the repository for this exercise onto Odin into a subdirectory called `cs1302-ce17`:
+1. Use Git to clone the repository for this exercise onto Odin into a subdirectory called `cs1302-hw06`:
 
    ```
-   $ git clone --depth 1 https://github.com/cs1302uga/cs1302-ce17.git
+   $ git clone --depth 1 https://github.com/cs1302uga/cs1302-hw06.git
    ```
 
-1. Change into the `cs1302-ce17` directory that was just created and look around. There should be
+1. Change into the `cs1302-hw06` directory that was just created and look around. There should be
    multiple Java files contained within the directory structure. To see a listing of all of the 
    files under the `src` subdirectory, use the `find` command as follows:
    
    ```
    $ find src
    ```
-1. **NOTE:** In this exercise, you will be referring to multiple generic interfaces, some of which
-   have two generic type parameters. It's very important that you keep keep parameter composition 
+   
+1. **NOTE:** In this assignment, you will be referring to multiple generic interfaces, some of which
+   have two generic type parameters. It's very important that you keep parameter composition 
    in mind when referring to the API documentation. For example, consider the following code snippets
    that illustrate type parameter composition:
    
@@ -74,11 +78,36 @@ command depends on your present working directory), then please note that contex
 ### Checkpoint 1 Steps
 
 1. `LambdaFun.java` contains method signatures and documentation for three generic methods. We will implement
+    and test these methods in the order that they appear in the Java program. Before getting to work on method
+    implementation, create and checkout a branch called `method1` to perform the work related to this 
+    checkpoint. You can do this using the following command:
+   
+    ```
+    $ git checkout -b method1
+    ```
+   
+    **EXPLANATION:** When you create a branch, it is as if Git makes a copy of the current
+    branch without the `cp` command! If you checkout the branch (like we just did), then stage
+    and commit changes, then those commits do not affect the `main` branch. In this way, 
+    you can work on adding new features or fixing bugs until you are confident that they work. 
+    Towards the end of this checkpoint, you will checkout the `main` branch, and it will appear 
+    as it did when you started the homework assignment. Then, you will merge changes from the
+    `method1` branch into the currently checked out branch. You can do the same kind of thing 
+    in your projects: 
+
+    1. branch to work on a new feature;
+    1. stage and commit as you test that feature; then 
+    1. once confident, checkout `main` and merge your branch commits into `main`. This way,
+       your `main` branch is always in a good state. 
+ 
+1. `LambdaFun.java` contains method signatures and documentation for three generic methods. We will implement
     and test these methods in the order that they appear in the Java program, starting with `printlnMatches`. 
     The exact signature for this method is:
+    
     ```java
     private static <T> void printlnMatches(T[] t, Predicate<T> p)
     ```
+    
     Answer the following questions about this method in your notes:
     1. What is the generic type parameter?
     1. Specifically, what reference types can replace `T`?
@@ -180,33 +209,29 @@ command depends on your present working directory), then please note that contex
 
 **Each student needs to individually submit their own work.**
 
-1. Create a plain text file called `SUBMISSION.md` directly inside the `cs1302-ce17`
-   directory with the following information.
+1. Create a plain text file called `SUBMISSION.md` directly inside the `cs1302-hw06`
+   directory with the following information:
 
-   1. Your name and UGA ID number;
-   1. Collaborator names, if any; and
-   1. If you created the API website, include the full link to the site you generated.
-   
+   1. Your name and UGA ID number
+  
    Here is an example of the contents of `SUBMISSION.md`.
    
    ```
-   1. Sally Smith (811-000-999)
-   2. Collaborators: Joe Allen, Stacie Mack
-   3. https://webwork.cs.uga.edu/~user/cs1302-ce17-doc
+   Sally Smith (811-000-999)
    ```
 
-1. Change directories to the parent of `cs1302-ce17` (e.g., `cd ..` from `cs1302-ce17`). If you would like
-   to make a backup tar file, the instructions are in the submissions steps for [ce02](https://github.com/cs1302uga/cs1302-ce02).
+1. Change directories to the parent of `cs1302-hw06` (e.g., `cd ..` from `cs1302-hw06`). If you would like
+   to make a backup tar file, the instructions are in the submissions steps for [hw01](https://github.com/cs1302uga/cs1302-hw01).
    We won't repeat those steps here and you can view them as optional.
    
 1. Use the `submit` command to submit this exercise to `csci-1302`:
    
    ```
-   $ submit cs1302-ce17 csci-1302
+   $ submit cs1302-hw06 csci-1302
    ```
    
    Read the output of the submit command very carefully. If there is an error while submitting, then it will displayed 
-   in that output. Additionally, if successful, the submit command creates a new receipt file in the directory you 
+   in that output. Additionally, if successful, the `submit` command creates a new receipt file in the directory you 
    submitted. The receipt file begins with rec and contains a detailed list of all files that were successfully submitted. 
    Look through the contents of the rec file and always remember to keep that file in case there is an issue with your submission.
 
