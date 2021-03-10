@@ -95,9 +95,9 @@ will serve as a helpful study guide for the exam.
     `method1` branch into the currently checked out branch. You can do the same kind of thing 
     in your projects: 
 
-       i) branch to work on a new feature;
-       ii) stage and commit as you test that feature; then 
-       iii) once confident, checkout `main` and merge your branch commits into `main`. This way,
+       1. branch to work on a new feature;
+       1. stage and commit as you test that feature; then 
+       1. once confident, checkout `main` and merge your branch commits into `main`. This way,
        your `main` branch is always in a good state. 
  
 1. `LambdaFun.java` contains method signatures and documentation for three generic methods. We will implement
