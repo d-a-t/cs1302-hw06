@@ -84,6 +84,8 @@ will serve as a helpful study guide for the exam.
    * `TreeSet<Scanner> implements Set<Scanner>`
    * `TreeSet<MinesweeperGame> implements Set<MinesweeperGame>`
    
+   Here is a snippet that utilizes what has been shown so far:
+   
    ```java       
    public static void main(String[] args) {
        Set<String> set = new TreeSet<String>(); // <--------- LINE2
