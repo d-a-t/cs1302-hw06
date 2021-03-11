@@ -60,8 +60,7 @@ will serve as a helpful study guide for the exam.
    have multiple generic type parameters. It's very important that you keep parameter **composition** 
    in mind when referring to the API documentation, especially in cases where inheritance and interfaces
    are involved. For example, consider the code snippets below. We've omitted most of the details so
-   that you can focus on just what is presented. Anytime you see "⇨" in a comment, you should read it
-   as "is replaced by" or "becomes".
+   that you can focus on just what is presented. 
    
    ```java
    public interface Set<E> {
@@ -78,6 +77,13 @@ will serve as a helpful study guide for the exam.
    } // TreeSet
    ```
    
+   The way it's written, the `T` in `implements Set<T>` will always be the same as the 
+   `T` in `TreeSet<T>`. This means all of the following are true:
+   
+   * `TreeSet<String> implements Set<String>`
+   * `TreeSet<Scanner> implements Set<Scanner>`
+   * `TreeSet<MinesweeperGame> implements Set<MinesweeperGame>`
+   
    ```java       
    public static void main(String[] args) {
        Set<String> set = new TreeSet<String>(); // <--------- LINE2
@@ -86,11 +92,13 @@ will serve as a helpful study guide for the exam.
    } // main
    ```
    
-   Impact of composition:
+   The table below shows the impact of type composition for the indicated
+   lines in the snippets. Anytime you see "⇨" in the table, you should read it
+   as "is replaced by" or "becomes":
    
    | LINE# | Result of Composition            | Replacements              |
    |-------|----------------------------------|---------------------------|
-   | LINE1 | `Set<E>` ⇨ `Set<T>`              | `E` ⇨ `T`                 |
+   | LINE1 | `Set<E>` ⇨ `Set<T>`              | `E` ⇨ `T`                 |  
    | LINE2 | `Set<E>` ⇨ `Set<String>`         | `E` ⇨ `String`            |
    | LINE2 | `TreeSet<T>` ⇨ `TreeSet<String>` | `T` ⇨ `String`            |
    | LINE3 | `add(E)` ⇨ `add(String)`         | `E` ⇨ `T`, `T` ⇨ `String` |
