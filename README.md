@@ -57,21 +57,44 @@ will serve as a helpful study guide for the exam.
    ```
    
 1. **NOTE:** In this assignment, you will be referring to multiple generic interfaces, some of which
-   have two generic type parameters. It's very important that you keep parameter composition 
-   in mind when referring to the API documentation. For example, consider the following code snippets
-   that illustrate type parameter composition:
+   have multiple generic type parameters. It's very important that you keep parameter **composition** 
+   in mind when referring to the API documentation, especially in cases where inheritance and interfaces
+   are involved. For example, consider the code snippets below. We've omitted most of the details so
+   that you can focus on just what is presented. Anytime you see "⇨" in a comment, you should read it
+   as "is replaced by" or "becomes".
    
    ```java
-   public interface SomeInterface<A> {
-       A foo();
-   } // SomeInterface
+   public interface Set<E> {
+       public boolean add(E item);
+       public boolean contains(E o);
+       ...
+   } // Set
    ```
    
    ```java
-   public static <T> void bar(SomeInterface<T> si) {
-       T var = si.foo(); // foo returns T, because A is replaced with T
-   } // bar
+   public class TreeSet<T> implements Set<T> { // <---------- LINE1 
+       public T first() { ... }
+       ...
+   } // TreeSet
    ```
+   
+   ```java       
+   public static void main(String[] args) {
+       Set<String> set = new TreeSet<String>(); // <--------- LINE2
+       set.add("hello"); // <-------------------------------- LINE3
+       System.out.println(set.first()); // <----------------- LINE4
+   } // main
+   ```
+   
+   Impact of composition:
+   
+   | LINE# | Result of Composition            | Replacements              |
+   |-------|----------------------------------|---------------------------|
+   | LINE1 | `Set<E>` ⇨ `Set<T>`              | `E` ⇨ `T`                 |
+   | LINE2 | `Set<E>` ⇨ `Set<String>`         | `E` ⇨ `String`            |
+   | LINE2 | `TreeSet<T>` ⇨ `TreeSet<String>` | `T` ⇨ `String`            |
+   | LINE3 | `add(E)` ⇨ `add(String)`         | `E` ⇨ `T`, `T` ⇨ `String` |
+   | LINE4 | `T first()` ⇨ `String first()`   | `T` ⇨ `String`            |
 
 ## Exercise Steps
 
