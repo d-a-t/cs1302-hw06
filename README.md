@@ -110,7 +110,7 @@ will serve as a helpful study guide for the exam.
 
 ### Checkpoint 1 Steps
 
-1. If you have not read and understood the [prerequisite readings](#references_and_prerequisites), you should 
+1. If you have not read and understood the [prerequisite readings](#references-and-prerequisites), you should 
    do that **before** attempting to implement the methods in this homework assignment.
    
 1. `LambdaFun.java` contains method signatures and documentation for three generic methods. We will implement
