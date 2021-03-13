@@ -165,8 +165,7 @@ will serve as a helpful study guide for the exam.
       [Oracle tutorial](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax)
       if you're still unsure about the syntax. Use your answer for **3.iii.** to help you write this lambda.
    1. This lambda should return `true` if the string argument contains the letter `"a"` (case sensitive).
-      You may wish to refer to the documentation for `java.lang.String`, provided
-      [here](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html).
+      You may wish to refer to the documentation for [`java.lang.String`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html).
    
 1. Variable `p` now references an object of type `Predicate<String>`. **HOLD THE FRONT DOOR!** That one line of code
    created a class that implemented an interface and created an object of that class! It must be the case since
