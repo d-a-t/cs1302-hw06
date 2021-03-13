@@ -149,8 +149,9 @@ will serve as a helpful study guide for the exam.
    1. Specifically, what reference types can replace `T`?
    1. In order to call this method, we need a reference to an object of a class that implements 
       [`Predicate<T>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html). 
-      `Predicate<T>` is a functional interface. **Write the full method signature of the single, abstract method
-      of this class in your notes.** Pay careful attention to the return type and the type of the formal parameter.
+      `Predicate<T>` is a functional interface. Once you identify the single, abstract method in the API documentation, 
+      **write the full method signature in your notes for reference.** Pay careful attention to the return type and the 
+      type of the formal parameter.
       
 1. Implement the `printlnMatches` method in `LambdaFun.java`. **You do not need to use a lambda for this step.**
    You will only need to use the object of type `Predicate<T>` referred to by `p` to call the appropriate method.
