@@ -163,9 +163,9 @@ will serve as a helpful study guide for the exam.
    
 1. At the end of the `main` method of `LambdaFun` class:
    1. Declare a variable of type `Predicate<String>` named `p`.
-   1. Initialize the variable using a lambda expression which provides an implementation for the single, abstract
-      method of the `Predicate<String>` interface. See the 
-      [Oracle tutorial](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax)
+   1. Initialize the variable, `p`, using a lambda expression which provides an implementation for the single, abstract
+      method of the `Predicate<String>` interface that you wrote down in your notes in a previous step. Please note the 
+      parameterization (`String`) that replaces `T`. See the [Oracle tutorial](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax)
       if you're still unsure about the syntax. Use your answer for **3.iii.** to help you write this lambda.
    1. This lambda should return `true` if the string argument contains the letter `"a"` (case sensitive).
       You may wish to refer to the documentation for [`java.lang.String`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html).
