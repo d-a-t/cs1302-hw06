@@ -279,7 +279,7 @@ will serve as a helpful study guide for the exam.
    You will only need to use the `Function<T, R>` and `Predicate<T>` references to call the appropriate methods.
    
 1. At the end of the `main` method of `LambdaFun` class:
-   * Declare a variable of type `Predicate<Email>` and assign to it, using a lambda expression, a referene to
+   * Declare a variable of type `Predicate<Email>` and assign to it, using a lambda expression, a reference to
      an object that tests if the sender of the email does not have a `"gatech.edu"` email address 
      (we'll "pretend" that they go to the spam filter). Remember, you can always refer to the API documentation
      for the associated interface when trying to determine the layout of your lambda.
