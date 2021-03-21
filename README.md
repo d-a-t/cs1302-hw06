@@ -211,7 +211,7 @@ will serve as a helpful study guide for the exam.
    $ git checkout main
    ```
 
-1. Take a look at `Driver.java`. Notice that you have reverted back to the
+1. Take a look at `LambdaFun.java`. Notice that you have reverted back to the
    original code (before you made any changes!). The new, updated, code is 
    on the other branch. To incorporate the changes (merge the changes) from the 
    `method1` branch into the current (`main`) branch, use the following command:
