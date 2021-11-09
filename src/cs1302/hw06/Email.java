@@ -86,19 +86,19 @@ public class Email {
     } // getSender
 
     /**
-     * Throws a NullPointerException if any values in the
-     * varargs parameter, {@code o} are {@code null}. The
-     * method performs no actions if all values in {@code o}
-     * are non-null.
+     * Throws a {@code NullPointerException} if any of the supplied values
+     * are {@code null}. The method performs no actions if all values
+     * are not {@code null}.
      *
-     * @param method the name of the calling method.
-     * @param o varargs parameter containing all objects to verify
+     * @param method  The name of the calling method.
+     * @param values  The values to verify. The number of values is variable
+     *                and may be zero.
      * @throws NullPointerException if any element of parameter
-     * {@code o} is null.
+     * {@code objs} is {@code null}.
      */
-    private void checkNull(String method, Object ... o) {
-        for (Object obj: o) {
-            if (o == null) {
+    private void checkNull(String method, Object ... values) {
+        for (Object value: values) {
+            if (value == null) {
                 throw new NullPointerException(method +
                                                ": Null Argument Provided");
             } // if
