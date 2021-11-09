@@ -93,8 +93,7 @@ public class Email {
      * @param method  The name of the calling method.
      * @param values  The values to verify. The number of values is variable
      *                and may be zero.
-     * @throws NullPointerException if any element of parameter
-     * {@code objs} is {@code null}.
+     * @throws NullPointerException if any of the supplied values are {@code null}
      */
     private void checkNull(String method, Object ... values) {
         for (Object value: values) {
