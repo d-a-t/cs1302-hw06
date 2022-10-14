@@ -27,6 +27,7 @@ public class LambdaFun {
         };
 
         Email[] inbox = new Email[] {
+            //  Email(recipient, sender, sendDate, contents)
             new Email("bjb211@uga.edu", "yellowjacket@gatech.edu",
                       LocalDate.of(2019, 2, 4), "Go GA Tech!"),
             new Email("bjb211@uga.edu", "mom@aol.com",
