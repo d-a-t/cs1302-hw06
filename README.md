@@ -146,7 +146,7 @@ will serve as a helpful study guide for the exam.
    this method is:
     
    ```java
-   private static <T> void printlnMatches(T[] t, Predicate<T> p)
+   private static <T> void printlnMatches(T[] array, Predicate<T> condition)
    ```
     
    Answer the following questions about this method in your notes:
@@ -159,26 +159,22 @@ will serve as a helpful study guide for the exam.
       type of the formal parameter.
       
 1. Implement the `printlnMatches` method in `LambdaFun.java`. **You do not need to use a lambda for this step.**
-   You will only need to use the object of type `Predicate<T>` referred to by `p` to call the appropriate method.
-   If you did the previous step, then you know what method(s) can be called with `p`. Implement this `printlnMatches`
-   method using some code that, uses `p`.
+   You will only need to use the object of type `Predicate<T>` referred to by `condition` to call the appropriate method.
+   If you did the previous step, then you know what method(s) can be called with `condition`.
    
-1. At the end of the `main` method of `LambdaFun` class:
-   1. Declare a variable of type `Predicate<String>` named `p`.
-   1. Initialize the variable, `p`, using a lambda expression which provides an implementation for the single, abstract
+1. Take a few minutes to read the in-line comments above the last two statements in the `main` method of `LambdaFun.java`.
+   1. The `containsA` variable uses a lambda expression to provide an implementation for the single, abstract
       method of the `Predicate<String>` interface that you wrote down in your notes in a previous step. Please note the 
       parameterization (`String`) that replaces `T`. See the [Oracle tutorial](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax)
       if you're still unsure about the syntax. Use your answer for **3.iii.** to help you write this lambda.
-   1. This lambda should return `true` if the string argument contains the letter `"a"` (case sensitive).
+   1. This lambda returns `true` if the string argument contains the letter `"a"` (case sensitive).
       You may wish to refer to the documentation for [`java.lang.String`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html).
    
-1. Variable `p` now references an object of type `Predicate<String>`. **HOLD THE FRONT DOOR!** That one line of code
+1. Variable `containsA` references an object of type `Predicate<String>`. **HOLD THE FRONT DOOR!** That one line of code
    created a class that implemented an interface and created an object of that class! It must be the case since
-   `p` is a reference variable of an interface type and the code compiles. This object contains a specific implementation
+   `containsA` is a reference variable of an interface type and the code compiles. This object contains a specific implementation
    of the single abstract method in the interface.
    
-1. Call `printlnMatches` by passing in array `myStrings` along with your newly created `Predicate<String>` variable.
-
 1. Compile and run your code. You will know if everything is working correctly if the method only prints strings 
    containing the letter `"a"`.
 
