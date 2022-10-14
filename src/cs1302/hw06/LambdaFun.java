@@ -39,6 +39,14 @@ public class LambdaFun {
             new Email("bjb211@uga.edu", "yellowjacket@gatech.edu",
                       LocalDate.of(2019, 2, 8), "Go GA Tech!")
         };
+        
+        // This line provides an implementation for the single, abstract                           
+        // method of Predicate<String> using a lambda expression.                                  
+        Predicate<String> containsA = (String str) -> str.contains("a");
+
+        // This line uses the object created in the previous statement to                          
+        // make printlnMatches print only the strings that contain the letter "a".                 
+        LambdaFun.<String>printlnMatches(myStrings, containsA);
 
     } // main
 
