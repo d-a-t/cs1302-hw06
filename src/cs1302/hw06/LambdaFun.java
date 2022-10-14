@@ -44,31 +44,34 @@ public class LambdaFun {
 
     /**
      * Prints the elements of the array that pass the test specified by the given predicate.
-     * More formally, this method prints all elements {@code e} in the array referred to by
-     * {@code t} such that {@code p.test(e)}. Each element will be printed on its own line.
+     * More formally, this method prints all elements {@code element} in the array referred to by
+     * {@code array} such that {@code condition.test(element)}. Each element will be printed on 
+     * its own line.
      *
      * @param <T> the type of the array elements
-     * @param t the specified array
-     * @param p the specified predicate
+     * @param array the specified array
+     * @param condition the specified predicate
      * @throws NullPointerException if the specified predicate is {@code null}
      */
-    private static <T> void printlnMatches(T[] t, Predicate<T> p) {
+    private static <T> void printlnMatches(T[] array, Predicate<T> condition) {
         throw new UnsupportedOperationException("not yet implemented");
     } // printlnMatches
 
     /**
      * Prints the elements of the array that pass the test specified by the given predicate
-     * using a string mapper. More formally, this method prints the string mapped elements
-     * {@code f.apply(e)} in the array referred to by {@code t} for each {@code e} such that
-     * {@code p.test(e)}. Each string mapped element will be printed on its own line.
+     * using a string mapper. More formally, this method prints the string-mapped elements
+     * {@code mapper.apply(element)} in the array referred to by {@code array} for each 
+     * {@code element} such that {@code condition.test(element)}. Each string-mapped element 
+     * will be printed on its own line.
      *
      * @param <T> the type of the array elements
-     * @param t the specified array
-     * @param p the specified predicate
-     * @param f the specified string mapper
+     * @param array the specified array
+     * @param condition the specified predicate
+     * @param mapper the specified string mapper
      * @throws NullPointerException if the specified predicate or string mapper is {@code null}
      */
-    private static <T> void printlnMappedMatches(T[] t, Predicate<T> p, Function<T, String> f) {
+    private static <T> void printlnMappedMatches(T[] array, Predicate<T> condition, 
+                                                 Function<T, String> mapper) {
         throw new UnsupportedOperationException("not yet implemented");
     } // printlnMappedMatches
 
