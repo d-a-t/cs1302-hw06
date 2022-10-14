@@ -240,7 +240,7 @@ will serve as a helpful study guide for the exam.
    The exact signature for this method is:
 
    ```java
-   private static <T> void printlnMappedMatches(T[] t, Predicate<T> p, Function<T, String> f)
+   private static <T> void printlnMappedMatches(T[] array, Predicate<T> condition, Function<T, String> mapper)
    ```
 
    Answer the following questions about this method in your notes:
@@ -267,8 +267,11 @@ will serve as a helpful study guide for the exam.
      nicely formatted `String`. Remember, you can always refer to the API documentation
      for the associated interface when trying to determine the layout of your lambda.
    
-1. Call the `printlnMappedMatches` using your newly created variables to filter out emails in the array referred
-   to by `inbox` from our rival school. Make sure to provide sufficient output so that an instructor/TA will be
+1. Call the `printlnMappedMatches` using your newly created variables to print out emails in the array referred
+   to by `inbox` that do not come from GA Tech. In other words, we don't want to receive any emails from a 
+   "gatech.edu" address. :)
+   
+   Make sure to provide sufficient output so that an instructor/TA will be
    able to easily tell that everything is working properly. See the previous checkpoint for an example
    of appropriate output.
    
