@@ -39,13 +39,13 @@ public class LambdaFun {
             new Email("bjb211@uga.edu", "yellowjacket@gatech.edu",
                       LocalDate.of(2019, 2, 8), "Go GA Tech!")
         };
-        
-        // This line provides an implementation for the single, abstract                           
-        // method of Predicate<String> using a lambda expression.                                  
+
+        // This line provides an implementation for the single, abstract
+        // method of Predicate<String> using a lambda expression.
         Predicate<String> containsA = (String str) -> str.contains("a");
 
-        // This line uses the object created in the previous statement to                          
-        // make printlnMatches print only the strings that contain the letter "a".                 
+        // This line uses the object created in the previous statement to
+        // make printlnMatches print only the strings that contain the letter "a".
         LambdaFun.<String>printlnMatches(myStrings, containsA);
 
     } // main
@@ -53,7 +53,7 @@ public class LambdaFun {
     /**
      * Prints the elements of the array that pass the test specified by the given predicate.
      * More formally, this method prints all elements {@code element} in the array referred to by
-     * {@code array} such that {@code condition.test(element)}. Each element will be printed on 
+     * {@code array} such that {@code condition.test(element)}. Each element will be printed on
      * its own line.
      *
      * @param <T> the type of the array elements
@@ -68,8 +68,8 @@ public class LambdaFun {
     /**
      * Prints the elements of the array that pass the test specified by the given predicate
      * using a string mapper. More formally, this method prints the string-mapped elements
-     * {@code mapper.apply(element)} in the array referred to by {@code array} for each 
-     * {@code element} such that {@code condition.test(element)}. Each string-mapped element 
+     * {@code mapper.apply(element)} in the array referred to by {@code array} for each
+     * {@code element} such that {@code condition.test(element)}. Each string-mapped element
      * will be printed on its own line.
      *
      * @param <T> the type of the array elements
@@ -78,7 +78,7 @@ public class LambdaFun {
      * @param mapper the specified string mapper
      * @throws NullPointerException if the specified predicate or string mapper is {@code null}
      */
-    private static <T> void printlnMappedMatches(T[] array, Predicate<T> condition, 
+    private static <T> void printlnMappedMatches(T[] array, Predicate<T> condition,
                                                  Function<T, String> mapper) {
         throw new UnsupportedOperationException("not yet implemented");
     } // printlnMappedMatches
