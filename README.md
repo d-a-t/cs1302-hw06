@@ -176,29 +176,22 @@ will serve as a helpful study guide for the exam.
    of the single abstract method in the interface.
    
 1. Compile and run your code. You will know if everything is working correctly if the method only prints strings 
-   containing the letter `"a"`.
+   containing the letter `"a"`. There should be 4 total lines of output at this point.
 
 1. Stage and commit all changes.
    
-1. Create three additional `Predicate<String>` objects to further test your `printlnMatches` method on the same
-   array. **Try to make them interesting!** Make sure to provide sufficient output so that it will be easy for the
-   instructor/TA to know everything is working properly.
+1. Using the last two statements in the `main` method as an example, make three additional calls to `printlnMatches` that 
+   output the information below. After implementing each call, we recommend compiling and running before moving on to the
+   next output. Make sure to include a print statement in between each method call so you can distinguish between the output.
    
-   An example of acceptable output:
-   ```
-   Test 1: outputs all strings that contain two or more a's
-   Lambda
+   1. **Call 1**: Outputs all strings in the array.
+   1. **Call 2**: Outputs all strings that are less than 6 characters.
+   1. **Call 3**: **Tricky:** Outputs all strings that contain two or more a's.
+
+1. Once you are confident that your method calls are correct, check your output against the [expected output](expected.txt).
+   If your output does not match the expected output, revise your method calls or your lambda expressions.
    
-   Test 2: outputs all strings that contain the letter b
-   Lambda
-   but
-   
-   Test 3: ...
-   ...
-   
-   ```
-   
-1. Make sure your code passes the `check1302` style audit.
+1. Compile and make sure your code passes the `check1302` style audit.
 
 1. Now that everything on this branch compiles, ensure that all changes 
    in the current branch have been staged and committed. 
@@ -219,18 +212,6 @@ will serve as a helpful study guide for the exam.
    ```
 
    Did the merge work? How do you know?
-
-1. In a previous exercise, you combined the `--all`, `--decorate`,
-   `--oneline`, and `--graph` options with `git log` to produce
-   a condensed, graphical version of the Git log. Generally, it is tiresome to
-   write them out each time. Instead, create a `git adog` command
-   by setting up a Git alias:
-
-   ```
-   $ git config --global alias.adog "log --all --decorate --oneline --graph"
-   ```
-   
-   **Note:** The previous command only needs to be done once on Odin.
    
 1. View the condensed, graphical version of your Git log using `git adog`.
    You should see that the current (`HEAD`) branch is `main` and that `main`
