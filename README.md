@@ -154,7 +154,7 @@ will serve as a helpful study guide for the exam.
    1. Specifically, what reference types can replace `T`?
    1. In order to call this method, we need a reference to an object of a class that implements 
       [`Predicate<T>`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html). 
-      `Predicate<T>` is a functional interface. Once you identify the single, abstract method in the API documentation, 
+      `Predicate<T>` is a functional interface. Once you identify the single, abstract method in the `Predicate` API documentation, 
       **write the full method signature in your notes for reference.** Pay careful attention to the return type and the 
       type of the formal parameter.
       
