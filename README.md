@@ -188,7 +188,7 @@ will serve as a helpful study guide for the exam.
    1. **Call 2**: Outputs all strings that are less than 6 characters.
    1. **Call 3**: **Tricky:** Outputs all strings that contain two or more a's.
 
-1. Once you are confident that your method calls are correct, check your output against the [expected output](expected.txt).
+1. Once you are confident that your method calls are correct, check your output against the [expected output](expected.md).
    If your output does not match the expected output, revise your method calls or your lambda expressions.
    
 1. Compile and make sure your code passes the `check1302` style audit.
