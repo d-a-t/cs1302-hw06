@@ -277,11 +277,6 @@ will serve as a helpful study guide for the exam.
    
 1. Stage and commit all changes.
    
-1. Create two additional `Function<Email, String>` objects to further test your `printlnMappedMatches` method on the same
-   array with the same predicate. In other words, you can provide different ways to print out the emails. 
-   Make sure to provide sufficient output so that it will be easy to convince your TA or instructor that 
-   everything is working properly.
-   
 1. Make sure your code passes the `check1302` style audit then stage and commit all changes.
 
 1. When you are convinced that everything is working properly, merge your `method2` branch into `main` as you did
