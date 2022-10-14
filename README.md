@@ -40,23 +40,9 @@ It is important to not only recall what you typed but also why you typed each of
 You won't need to submit your notes in your final submission. However, if done properly, your exercise notes 
 will serve as a helpful study guide for the exam.
 
-### Getting Started
+### Introduction
 
-1. Use Git to clone the repository for this exercise onto Odin into a subdirectory called `cs1302-hw06`:
-
-   ```
-   $ git clone --depth 1 https://github.com/cs1302uga/cs1302-hw06.git
-   ```
-
-1. Change into the `cs1302-hw06` directory that was just created and look around. There should be
-   multiple Java files contained within the directory structure. To see a listing of all of the 
-   files under the `src` subdirectory, use the `find` command as follows:
-   
-   ```
-   $ find src
-   ```
-   
-1. **NOTE:** In this assignment, you will be referring to multiple generic interfaces, some of which
+1. In this assignment, you will be referring to multiple generic interfaces, some of which
    have multiple generic type parameters. It's very important that you keep parameter **composition** 
    in mind when referring to the API documentation, especially in cases where inheritance and interfaces
    are involved. For example, consider the code snippets below. We've omitted most of the details so
@@ -105,6 +91,22 @@ will serve as a helpful study guide for the exam.
    | LINE2 | `TreeSet<T>` ⇨ `TreeSet<String>` | `T` ⇨ `String`            |
    | LINE3 | `add(E)` ⇨ `add(String)`         | `E` ⇨ `T`, `T` ⇨ `String` |
    | LINE4 | `T first()` ⇨ `String first()`   | `T` ⇨ `String`            |
+   
+### Getting Started
+
+1. Use Git to clone the repository for this exercise onto Odin into a subdirectory called `cs1302-hw06`:
+
+   ```
+   $ git clone --depth 1 https://github.com/cs1302uga/cs1302-hw06.git
+   ```
+
+1. Change into the `cs1302-hw06` directory that was just created and look around. There should be
+   multiple Java files contained within the directory structure. To see a listing of all of the 
+   files under the `src` subdirectory, use the `find` command as follows:
+   
+   ```
+   $ find src
+   ```
 
 ## Exercise Steps
 
