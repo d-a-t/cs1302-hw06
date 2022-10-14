@@ -82,7 +82,7 @@ will serve as a helpful study guide for the exam.
    
    * `TreeSet<String> implements Set<String>`
    * `TreeSet<Scanner> implements Set<Scanner>`
-   * `TreeSet<MinesweeperGame> implements Set<MinesweeperGame>`
+   * `TreeSet<ConnectFour> implements Set<ConnectFour>`
    
    Here is a snippet that utilizes what has been shown so far:
    
