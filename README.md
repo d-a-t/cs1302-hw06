@@ -58,7 +58,9 @@ will serve as a helpful study guide for the exam.
    
    ```java
    public class TreeSet<T> implements Set<T> { // <---------- LINE1 
+       // The method bodies are omitted but would be needed in a real implementation
        public T first() { ... }
+       public boolean add(T item) { ... }
        ...
    } // TreeSet
    ```
