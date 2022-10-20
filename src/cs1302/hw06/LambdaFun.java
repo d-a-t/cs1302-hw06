@@ -43,11 +43,18 @@ public class LambdaFun {
         // This line provides an implementation for the single, abstract
         // method of Predicate<String> using a lambda expression.
         Predicate<String> containsA = (String str) -> str.contains("a");
+        Predicate<String> callAll = (String str) -> true;
+        Predicate<String> lessThan6 = (String str) -> str.length() < 6;
+        Predicate<String> atLeast2A = (String str) -> str.toLowerCase().chars().filter(
+            num -> num == 'a'
+            ).count() >= 2;
 
         // This line uses the object created in the previous statement to
         // make printlnMatches print only the strings that contain the letter "a".
         LambdaFun.<String>printlnMatches(myStrings, containsA);
-
+        LambdaFun.<String>printlnMatches(myStrings, callAll);
+        LambdaFun.<String>printlnMatches(myStrings, lessThan6);
+        LambdaFun.<String>printlnMatches(myStrings, atLeast2A);
     } // main
 
     /**
@@ -66,37 +73,15 @@ public class LambdaFun {
             throw new NullPointerException();
         }
 
-        String temp = "[";
+        String temp = "[ ";
         for (T val : array) {
             if (condition.test(val)) {
                 temp =  temp.concat(val.toString()).concat(",");
             }
         }
 
-        System.out.println(temp.substring(0, temp.length() - 1).concat("]"));
+        System.out.println(temp.substring(0, temp.length() - 1).concat(" ]"));
     } // printlnMatches
-
-    /**
-     * Returns a string containing each item of this string list
-     * seperated by {@code sep} and starting with {@code star}
-     * and ending with {@code end}.
-     * <p>
-    */
-    public <T> String makeString(T[] array, String start, String sep, String end) {
-        start = start == null ? "null" : start;
-        sep = sep == null ? "null" : sep;
-        end = end == null ? "null" : end;
-        
-        String temp = start;
-        for (int i = 0; i < array.length; i++) {
-            if (i != array.length - 1) {
-                temp =  temp.concat(array[i] == null ? "null" : array[i].toString() ).concat(sep);
-            } else if (i == array.length - 1) {
-                temp = temp.concat(array[i] == null ? "null" : array[i].toString() );
-            }
-        }
-        return temp.concat(end);
-    } // makeString
 
     /**
      * Prints the elements of the array that pass the test specified by the given predicate
